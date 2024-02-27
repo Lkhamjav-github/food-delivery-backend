@@ -4,7 +4,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.userModel = void 0;
-const mongodb_1 = require("mongodb");
 const mongoose_1 = __importDefault(require("mongoose"));
 const { Schema } = mongoose_1.default;
-exports.userModel = mongoose_1.default.model("User", new Schema({ _id: mongodb_1.ObjectId, name: String, email: String, phoneNumber: Number }));
+exports.userModel = mongoose_1.default.model("User", new Schema({
+    name: String, email: String, phoneNumber: Number, role: {
+        type: String,
+        enum: ["admin", "customer"]
+    }
+}));

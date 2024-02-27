@@ -5,5 +5,10 @@ const { Schema } = mongoose
 
 export const userModel = mongoose.model(
     "User",
-    new Schema({ _id: ObjectId, name: String, email: String, phoneNumber: Number })
+    new Schema({
+        name: String, email: String, phoneNumber: Number, role: {
+            type: String,
+            enum: ["admin", "customer"]
+        }
+    })
 );

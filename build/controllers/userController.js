@@ -17,6 +17,7 @@ const getUsers = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
 });
 exports.getUsers = getUsers;
 const createUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const userCreate = yield userModel_1.userModel.create({ name: "String", email: "String", phoneNumber: 976984792347 });
+    const userCreate = yield userModel_1.userModel.create({ name: "String", email: "String@email.com", phoneNumber: 976984792347, role: "admin" });
+    res.send(userCreate);
 });
 exports.createUser = createUser;
