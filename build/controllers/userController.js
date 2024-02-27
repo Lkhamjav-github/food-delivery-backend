@@ -9,14 +9,14 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.createCar = exports.getCars = void 0;
-const carModel_1 = require("../models/carModel");
-const getCars = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const findCar = yield carModel_1.CarModel.find({});
-    res.send(findCar);
+exports.createUser = exports.getUsers = void 0;
+const userModel_1 = require("../models/userModel");
+const getUsers = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const findUser = yield userModel_1.userModel.find({});
+    res.send(findUser);
 });
-exports.getCars = getCars;
-const createCar = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const userCreate = yield carModel_1.CarModel.create({ name: "lc200", color: "green", year: 2000 });
+exports.getUsers = getUsers;
+const createUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const userCreate = yield userModel_1.userModel.create({ name: "String", email: "String", phoneNumber: 976984792347 });
 });
-exports.createCar = createCar;
+exports.createUser = createUser;
