@@ -17,7 +17,13 @@ const getUsers = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
 });
 exports.getUsers = getUsers;
 const createUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const userCreate = yield userModel_1.userModel.create({ name: "String", email: "String@email.com", phoneNumber: 976984792347, role: "admin" });
+    // req.send(userCreate)
+    const userCreate = yield userModel_1.userModel.create({ name: "name", email: "String@email.com", district: "bgd 28r horoo 102-89", Password: 976984792347, role: "admin" });
     res.send(userCreate);
 });
 exports.createUser = createUser;
+// export const updateUser = async (req: express.Request, res: express.Response) => {
+//     // req.send(userCreate)
+//     const update = await userModel.create({ name: "${name}", email: "String@email.com", phoneNumber: 976984792347, role: "admin" })
+//     res.send(update)
+// }

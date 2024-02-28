@@ -7,7 +7,7 @@ exports.userModel = void 0;
 const mongoose_1 = __importDefault(require("mongoose"));
 const { Schema } = mongoose_1.default;
 exports.userModel = mongoose_1.default.model("User", new Schema({
-    name: String, email: String, phoneNumber: Number, role: {
+    name: String, email: String, district: String, Password: String, role: {
         type: String,
         enum: ["admin", "customer"]
     }

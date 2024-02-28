@@ -8,6 +8,11 @@ export const getUsers = async (req: express.Request, res: express.Response) => {
 
 export const createUser = async (req: express.Request, res: express.Response) => {
     // req.send(userCreate)
-    const userCreate = await userModel.create({ name: "${name}", email: "String@email.com", phoneNumber: 976984792347, role: "admin" })
+    const userCreate = await userModel.create({ name: "name", email: "String@email.com", district: "bgd 28r horoo 102-89", Password: 976984792347, role: "admin" })
     res.send(userCreate)
 }
+// export const updateUser = async (req: express.Request, res: express.Response) => {
+//     // req.send(userCreate)
+//     const update = await userModel.create({ name: "${name}", email: "String@email.com", phoneNumber: 976984792347, role: "admin" })
+//     res.send(update)
+// }

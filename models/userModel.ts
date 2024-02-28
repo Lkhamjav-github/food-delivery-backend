@@ -6,7 +6,7 @@ const { Schema } = mongoose
 export const userModel = mongoose.model(
     "User",
     new Schema({
-        name: String, email: String, phoneNumber: Number, role: {
+        name: String, email: String, district: String, Password: String, role: {
             type: String,
             enum: ["admin", "customer"]
         }
