@@ -3,7 +3,7 @@ import cors from 'cors'
 import { connectToDb } from "./connectToDb";
 import { userRouter } from "./router/userRouter";
 import coockieParser from "cookie-parser"
-import { verifyToken } from "verify";
+// import { verifyToken } from "verify";
 // import { IReq } from "./utils/interface"
 // import connectDB from 'db'
 import dotenv from "dotenv"
@@ -21,9 +21,9 @@ connectToDb();
 app.use(cors());
 app.use(express.json());
 app.use(coockieParser())
-app.use("/auth", userRouter);
+app.use(userRouter);
 
-app.use("/profile", verifyToken)
+// app.use("/profile", verifyToken)
 
 app.get('/', (req: express.Request, res: express.Response) => {
     res.send('hello')
