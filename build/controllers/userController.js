@@ -55,7 +55,7 @@ const logIn = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         if (!passwordMatch) {
             return res.status(400).json({ message: 'Wrong password' });
         }
-        const token = jsonwebtoken_1.default.sign({ userId: user._id, email: user.email }, 'your_secret_key', { expiresIn: '1h' });
+        const token = jsonwebtoken_1.default.sign({ userId: user._id, email: user.email }, 'JWT_SECRET_KEY', { expiresIn: '1h' });
         console.log("your generated token is :", token);
         res.status(200).json({ message: 'User sign in success', token: token });
     }

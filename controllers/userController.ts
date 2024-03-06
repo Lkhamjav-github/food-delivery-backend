@@ -46,11 +46,10 @@ export const logIn = async (req: express.Request, res: express.Response) => {
         if (!passwordMatch) {
             return res.status(400).json({ message: 'Wrong password' });
         }
+        const refreshToken = jwt.sign({ userId: user._id, email: user.email }, 'JWT_SECRET_KEY', { expiresIn: '24h' });
+        const accessToken = jwt.sign({ userId: user._id, email: user.email }, 'JWT_SECRET_KEY', { expiresIn: '1h' });
 
-        const token = jwt.sign({ userId: user._id, email: user.email }, 'JWT_SECRET_KEY', { expiresIn: '1h' });
-        console.log("your generated token is :", token)
-
-        res.status(200).json({ message: 'User sign in success', token: token });
+        res.status(200).json({ message: 'User sign in success' }).cookie("refreshToken", refreshToken).header({ accessToken: accessToken })
     } catch (error) {
         console.log(error);
         res.status(500).json({ message: 'User failed' });

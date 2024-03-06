@@ -15,9 +15,8 @@ exports.userModel = mongoose_1.default.model("User", new Schema({
         unique: true,
         required: [true, "Please enter your email"]
     }, address: {
-        district: { type: String },
-        street: { type: String },
-        buildingNo: { type: Number },
+        type: String,
+        required: [true, "Please enter your name"]
     }, Password: {
         type: String,
         minlength: 6,
