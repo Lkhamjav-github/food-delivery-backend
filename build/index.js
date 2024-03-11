@@ -12,8 +12,12 @@ const cookie_parser_1 = __importDefault(require("cookie-parser"));
 // import { IReq } from "./utils/interface"
 // import connectDB from 'db'
 const dotenv_1 = __importDefault(require("dotenv"));
-const PORT = 8080;
+// const app = express();
 const app = (0, express_1.default)();
+app.get("/", (req, res) => res.send("Express on Vercel"));
+const PORT = 8080;
+app.listen(PORT, () => console.log("Server ready on port." + PORT));
+module.exports = app;
 dotenv_1.default.config();
 (0, connectToDb_1.connectToDb)();
 app.use((0, cors_1.default)());

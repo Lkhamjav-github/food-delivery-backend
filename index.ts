@@ -10,8 +10,15 @@ import dotenv from "dotenv"
 import { verify } from "crypto";
 
 
-const PORT = 8080;
+// const app = express();
 const app: Application = express()
+app.get("/", (req, res) => res.send("Express on Vercel"));
+const PORT = 8080;
+app.listen(PORT, () => console.log("Server ready on port." + PORT));
+
+module.exports = app;
+
+
 
 dotenv.config();
 
